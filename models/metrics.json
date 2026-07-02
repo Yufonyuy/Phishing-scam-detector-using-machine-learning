@@ -1,0 +1,76 @@
+{
+  "data_path": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/data/sample_sms.csv",
+  "n_samples": 6001,
+  "labels": [
+    "ham",
+    "smishing",
+    "spam"
+  ],
+  "accuracy": 0.955363091272485,
+  "precision_macro": 0.8652208588826032,
+  "recall_macro": 0.8742240933959771,
+  "f1_macro": 0.8693711819537242,
+  "classification_report": {
+    "ham": {
+      "precision": 0.9909015715467329,
+      "recall": 0.9868204283360791,
+      "f1-score": 0.988856789104416,
+      "support": 1214.0
+    },
+    "smishing": {
+      "precision": 0.8734177215189873,
+      "recall": 0.8518518518518519,
+      "f1-score": 0.8625,
+      "support": 162.0
+    },
+    "spam": {
+      "precision": 0.7313432835820896,
+      "recall": 0.784,
+      "f1-score": 0.7567567567567568,
+      "support": 125.0
+    },
+    "accuracy": 0.955363091272485,
+    "macro avg": {
+      "precision": 0.8652208588826032,
+      "recall": 0.8742240933959771,
+      "f1-score": 0.8693711819537242,
+      "support": 1501.0
+    },
+    "weighted avg": {
+      "precision": 0.9566063219131051,
+      "recall": 0.955363091272485,
+      "f1-score": 0.9558905640022355,
+      "support": 1501.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      1198,
+      2,
+      14
+    ],
+    [
+      2,
+      138,
+      22
+    ],
+    [
+      9,
+      18,
+      98
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "ham",
+    "smishing",
+    "spam"
+  ],
+  "plot_assets": {
+    "label_distribution": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/label_distribution.png",
+    "risk_signal_prevalence": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/risk_signal_prevalence.png",
+    "confusion_matrix": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/confusion_matrix.png",
+    "risk_indicators": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/risk_indicators.png",
+    "metrics_summary": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/metrics_summary.png",
+    "feature_profile": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/feature_profile.png"
+  }
+}
