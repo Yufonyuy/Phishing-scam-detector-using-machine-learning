@@ -10,7 +10,7 @@ from pptx.enum.text import PP_ALIGN
 from pptx.enum.shapes import MSO_SHAPE, MSO_CONNECTOR
 from pptx.dml.color import RGBColor
 
-ROOT = Path('/home/user/sms_scam_detector')
+ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
 from features import structural_features  # noqa
 from plot_assets import generate_plot_assets  # noqa

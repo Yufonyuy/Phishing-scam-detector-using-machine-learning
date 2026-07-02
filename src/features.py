@@ -9,12 +9,17 @@ import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
-URL_RE = re.compile(r"(?i)\b(?:https?://|www\.|bit\.ly/|tinyurl\.com/|t\.co/|[a-z0-9-]+\.(?:com|net|org|cm|info|biz)\b)")
+URL_RE = re.compile(
+    r"(?i)\b((?:https?://|www\.)\S+|(?:[a-z0-9-]+\.)+(?:com|net|org|cm|info|biz|co|io|gov|edu)(?:/\S*)?)"
+    )
+TELCO_RE = re.compile(
+    r"(?i)\b(?:airtime|crédit|forfait|bundle|internet|sms illimités|minutes|mtn|orange|camtel|nexttel|dial|compose|\*\d{3}#)\b"
+)
 EMAIL_RE = re.compile(r"(?i)\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b")
 PHONE_RE = re.compile(r"(?:(?:\+?237)?\s?(?:6\d{2}|2\d{2})[\s.-]?\d{3}[\s.-]?\d{3}|\b\d{4,}\b)")
 MONEY_RE = re.compile(r"(?i)(?:xaf|fcfa|cfa|\$|€|money|argent|paiement|payment|momo|orange money|mobile money)")
 OTP_PIN_RE = re.compile(r"(?i)\b(?:pin|otp|password|mot de passe|code secret|login|identifiant|card details|bank login)\b")
-URGENCY_RE = re.compile(r"(?i)\b(?:urgent|immediately|now|today|within|blocked|suspended|expires|alert|security|verify|confirm|update|cancel|débloquer|suspendu|confirmez|immédiatement|alerte|maintenant)\b")
+URGENCY_RE = re.compile(r"(?i)\b(?:urgent|immediately|within|blocked|suspended|expires|alert|security|verify|confirm|update|cancel|débloquer|suspendu|confirmez|immédiatement|alerte|maintenant)\b")
 REWARD_RE = re.compile(r"(?i)\b(?:won|winner|congratulations|selected|prize|bonus|free|grant|refund|double your money|gagné|félicitations|cadeau|remboursement|gratuit)\b")
 THREAT_RE = re.compile(r"(?i)\b(?:blocked|suspended|accident|hospital|failed|expires|suspicious|unknown device|bloqué|suspendu|accident|hôpital|échoué)\b")
 ACTION_RE = re.compile(r"(?i)\b(?:click|call|reply|send|dial|visit|register|enter|provide|verify|confirm|update|cliquez|appelez|répondez|envoyez|confirmez|entrez)\b")
@@ -113,6 +118,12 @@ def explain_message(text: str) -> List[RiskIndicator]:
     add(bool(THREAT_RE.search(raw)), "Uses threat or fear language", "high", "Warnings about blocked accounts, accidents, or failed payments can manipulate users.")
     add(bool(MONEY_RE.search(raw)), "Mentions money or mobile money", "medium", "Financial wording increases risk when combined with links, PINs, or urgency.")
     add(raw.count("!") >= 2, "Multiple exclamation marks", "low", "Aggressive punctuation is often used in mass spam or scam messages.")
+    add(
+    bool(TELCO_RE.search(raw)),
+    "Telecom service message detected",
+    "low",
+    "This appears to be a telecom service or promotional message. Verify that it comes from your mobile network operator."
+)
 
     if not indicators:
         indicators.append(RiskIndicator("No obvious scam cues found", "low", "The message lacks common phishing signals, but users should still verify unusual requests."))

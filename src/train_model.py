@@ -18,7 +18,7 @@ from features import SmsFeatureExtractor, normalize_text
 from plot_assets import generate_plot_assets
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_PATH = ROOT / "data" / "sample_sms.csv"
+DATA_PATH = ROOT / "data" / "shuffled_combined_df.csv"
 MODEL_PATH = ROOT / "models" / "sms_detector.joblib"
 METRICS_PATH = ROOT / "models" / "metrics.json"
 
@@ -32,7 +32,8 @@ def load_data(path: Path = DATA_PATH) -> pd.DataFrame:
 
 def build_pipeline() -> Pipeline:
     text_features = Pipeline([
-        ("tfidf", TfidfVectorizer(ngram_range=(1, 2), min_df=1, sublinear_tf=True, strip_accents="unicode")),
+        ("tfidf", TfidfVectorizer(ngram_range=(1, 2), min_df=1,
+         sublinear_tf=True, strip_accents="unicode")),
     ])
     structural_features = Pipeline([
         ("extract", SmsFeatureExtractor()),
@@ -44,7 +45,8 @@ def build_pipeline() -> Pipeline:
     ])
     return Pipeline([
         ("features", features),
-        ("clf", LogisticRegression(max_iter=2000, class_weight="balanced", random_state=42)),
+        ("clf", LogisticRegression(max_iter=2000,
+         class_weight="balanced", random_state=42)),
     ])
 
 
@@ -76,7 +78,8 @@ def train() -> dict:
     # Generate fresh analytics images for the app and PowerPoint deck.
     try:
         metrics["plot_assets"] = generate_plot_assets(DATA_PATH, METRICS_PATH)
-        METRICS_PATH.write_text(json.dumps(metrics, indent=2), encoding="utf-8")
+        METRICS_PATH.write_text(json.dumps(
+            metrics, indent=2), encoding="utf-8")
     except Exception as exc:  # plotting should never break training
         metrics["plot_asset_error"] = str(exc)
 

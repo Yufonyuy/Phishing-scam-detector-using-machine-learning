@@ -1,63 +1,63 @@
 {
-  "data_path": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/data/sample_sms.csv",
-  "n_samples": 6001,
+  "data_path": "/home/supremo/Desktop/sms_scam_detector/data/shuffled_combined_df.csv",
+  "n_samples": 7509,
   "labels": [
     "ham",
     "smishing",
     "spam"
   ],
-  "accuracy": 0.955363091272485,
-  "precision_macro": 0.8652208588826032,
-  "recall_macro": 0.8742240933959771,
-  "f1_macro": 0.8693711819537242,
+  "accuracy": 0.9696485623003195,
+  "precision_macro": 0.9404580428184727,
+  "recall_macro": 0.944675575371925,
+  "f1_macro": 0.9425421302470198,
   "classification_report": {
     "ham": {
-      "precision": 0.9909015715467329,
-      "recall": 0.9868204283360791,
-      "f1-score": 0.988856789104416,
-      "support": 1214.0
+      "precision": 0.9910179640718563,
+      "recall": 0.9873228933631618,
+      "f1-score": 0.9891669779604034,
+      "support": 1341.0
     },
     "smishing": {
-      "precision": 0.8734177215189873,
-      "recall": 0.8518518518518519,
-      "f1-score": 0.8625,
-      "support": 162.0
+      "precision": 0.9383561643835616,
+      "recall": 0.9547038327526133,
+      "f1-score": 0.9464594127806563,
+      "support": 287.0
     },
     "spam": {
-      "precision": 0.7313432835820896,
-      "recall": 0.784,
-      "f1-score": 0.7567567567567568,
-      "support": 125.0
+      "precision": 0.892,
+      "recall": 0.892,
+      "f1-score": 0.892,
+      "support": 250.0
     },
-    "accuracy": 0.955363091272485,
+    "accuracy": 0.9696485623003195,
     "macro avg": {
-      "precision": 0.8652208588826032,
-      "recall": 0.8742240933959771,
-      "f1-score": 0.8693711819537242,
-      "support": 1501.0
+      "precision": 0.9404580428184727,
+      "recall": 0.944675575371925,
+      "f1-score": 0.9425421302470198,
+      "support": 1878.0
     },
     "weighted avg": {
-      "precision": 0.9566063219131051,
-      "recall": 0.955363091272485,
-      "f1-score": 0.9558905640022355,
-      "support": 1501.0
+      "precision": 0.9697887694347399,
+      "recall": 0.9696485623003195,
+      "f1-score": 0.969705414756629,
+      "support": 1878.0
     }
   },
   "confusion_matrix": [
     [
-      1198,
-      2,
-      14
+      1324,
+      1,
+      16
     ],
     [
       2,
-      138,
-      22
+      274,
+      11
     ],
     [
-      9,
-      18,
-      98
+      10,
+      17,
+      223
     ]
   ],
   "confusion_matrix_labels": [
@@ -66,11 +66,11 @@
     "spam"
   ],
   "plot_assets": {
-    "label_distribution": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/label_distribution.png",
-    "risk_signal_prevalence": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/risk_signal_prevalence.png",
-    "confusion_matrix": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/confusion_matrix.png",
-    "risk_indicators": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/risk_indicators.png",
-    "metrics_summary": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/metrics_summary.png",
-    "feature_profile": "/home/yufonyuy/Downloads/workspace-019f1d88-8a24-7331-904e-622000900d7b/sms_scam_detector/docs/assets/feature_profile.png"
+    "label_distribution": "/home/supremo/Desktop/sms_scam_detector/docs/assets/label_distribution.png",
+    "risk_signal_prevalence": "/home/supremo/Desktop/sms_scam_detector/docs/assets/risk_signal_prevalence.png",
+    "confusion_matrix": "/home/supremo/Desktop/sms_scam_detector/docs/assets/confusion_matrix.png",
+    "risk_indicators": "/home/supremo/Desktop/sms_scam_detector/docs/assets/risk_indicators.png",
+    "metrics_summary": "/home/supremo/Desktop/sms_scam_detector/docs/assets/metrics_summary.png",
+    "feature_profile": "/home/supremo/Desktop/sms_scam_detector/docs/assets/feature_profile.png"
   }
 }
