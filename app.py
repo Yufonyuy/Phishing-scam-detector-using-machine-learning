@@ -388,7 +388,7 @@ def inject_hero() -> None:
         """
         <div class="hero">
           <span class="tag">CGIS · Yaoundé Girls in STEAM Hackathon · Explainable AI</span>
-          <h1>PhishLense 👀</h1>
+          <h1>PhishLens 👀</h1>
           <p><b>Detect suspicious SMS before users click, pay, or share secrets.</b></p>
           <p>AI-powered smishing classification with confidence scores, local Cameroon examples, and human-readable risk explanations.</p>
         </div>
