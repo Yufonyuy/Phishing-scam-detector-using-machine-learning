@@ -17,7 +17,7 @@ from train_model import MODEL_PATH, METRICS_PATH, train  # noqa: E402
 from plot_assets import ASSET_DIR, generate_plot_assets  # noqa: E402
 
 st.set_page_config(
-    page_title="SMS Scam Detector | CGIS",
+    page_title="PhishLense | CGIS",
     page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -388,7 +388,7 @@ def inject_hero() -> None:
         """
         <div class="hero">
           <span class="tag">CGIS · Yaoundé Girls in STEAM Hackathon · Explainable AI</span>
-          <h1>SMS Scam Detector</h1>
+          <h1>PhishLense 👀</h1>
           <p><b>Detect suspicious SMS before users click, pay, or share secrets.</b></p>
           <p>AI-powered smishing classification with confidence scores, local Cameroon examples, and human-readable risk explanations.</p>
         </div>
@@ -500,7 +500,7 @@ with st.sidebar:
     )
     
     two_class = st.toggle(
-        "Pitch mode: safe vs scam", 
+        "Safe vs scam", 
         value=False, 
         help="Maps smishing to scam and ham/spam to safer/non-scam for a simpler user story."
     )
