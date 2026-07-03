@@ -17,7 +17,7 @@ from train_model import MODEL_PATH, METRICS_PATH, train  # noqa: E402
 from plot_assets import ASSET_DIR, generate_plot_assets  # noqa: E402
 
 st.set_page_config(
-    page_title="PhishLense | CGIS",
+    page_title="PhishLens | CGIS",
     page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded",
