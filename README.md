@@ -1,6 +1,6 @@
 # SMS Scam / Smishing Detector
 
-A competition-ready Streamlit demo for detecting **ham**, **spam**, and **smishing/scam** SMS messages with human-readable explanations.
+A ready Streamlit demo for detecting **ham**, **spam**, and **smishing/scam** SMS messages with human-readable explanations.
 
 ## What it includes
 
@@ -31,6 +31,7 @@ cd sms_scam_detector
 pip install -r requirements.txt
 python src/train_model.py
 streamlit run app.py
+Note Remeber to create a virtual environment
 ```
 
 If `models/sms_detector.joblib` does not exist, the app trains it automatically on first launch.
@@ -62,9 +63,6 @@ Use these in the live pitch:
 2. Spam: `FREE airtime for all users this weekend. Text YES to 8080 for promo details.`
 3. Smishing: `Orange Money account blocked. Verify immediately: https://om-secure-login.com`
 
-## Important note
-
-The included dataset is intentionally small so the project can run immediately. For a real competition submission, train and validate on a larger verified dataset such as the dataset referenced in the project brief, then test with local Cameroon English/French examples.
 
 ## Professional demo workflow
 
@@ -108,16 +106,3 @@ The interface is responsive and includes:
 - explanation cards;
 - latest training analytics tabs.
 
-### 3. Regenerate the PowerPoint with the latest plots
-
-```bash
-python docs/make_winning_bilingual_deck.py
-```
-
-This updates:
-
-```text
-docs/CGIS_SMS_Scam_Detector_Winning_Bilingual.pptx
-```
-
-The deck embeds the newest images from `docs/assets`, so after retraining with a larger dataset, rerun the deck script before presenting.
